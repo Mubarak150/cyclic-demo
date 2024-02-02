@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error</title>
+    <script src="https://cdn.tailwindcss.com"></script>    
+</head>
+    <body class="bg-red-900">
+            
+
+        <div class="sm:mx-auto h-screen sm:w-full sm:max-w-sm flex flex-col justify-center items-center">
+            
+            <h2 class=" text-center text-3xl font-bold leading-9 tracking-tight text-white">ERROR 4XX</h2>
+            <form action="/failure" method="post">
+                <button type="submit" class="mt-2 bg-none px-4 p-2 rounded-sm border border-yellow-400 text-yellow-400 font-semibold transition-transform transform hover:-translate-y-1">Try Again</button>
+            </form>
+        </div>
+
+    </body>
+</html>
