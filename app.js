@@ -3,7 +3,7 @@ const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const client = require("@mailchimp/mailchimp_marketing");
-const fs = require('fs');
+// const fs = require('fs');
 
 const app = express(); 
 app.use(express.static("public")); // a public folder to load all the static files and entities like imgs
@@ -21,7 +21,7 @@ app.post("/", function(req, res){
     var email = req.body.email; 
 
     client.setConfig({
-        apiKey: "0b9455b943e6fa96f1d85b9f026ae200-us21",
+        apiKey: "64500f26c5bedc40c80b3f074ddcc61d-us21",
         server: "us21",
         });
     
@@ -37,7 +37,7 @@ app.post("/", function(req, res){
             }],
         });
         if(response.errors[0] ) {
-            console.log("THE FOLLOWIND ERROR OCCURED: ");
+            console.log("THE FOLLOWING ERROR OCCURED: ");
             console.log(response.errors[0].error);
             res.sendFile(__dirname + "/failure.html")
             
@@ -56,7 +56,7 @@ app.post('/failure', function(req, res) {
     res.redirect('/')
 })
 
-// key: 0b9455b943e6fa96f1d85b9f026ae200-us21,  name: first-key
+// key: 64500f26c5bedc40c80b3f074ddcc61d-us21,  name: second-key
 // list_id: 52d27cd10a
 app.listen(process.env.PORT || 3000, function(){
     console.log("server is listening at port 3000")
